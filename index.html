@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+        
+            function buttons(n) {
+                    let ascii = 65
+                    for (let i = 0; i < n; i++) {
+                        let j = document.createElement("BUTTON");
+                        document.body.appendChild(j);
+                        j.style = "height: 25px; width: 50px";
+                        let letter = String.fromCharCode(ascii)
+                        j.innerHTML = letter;
+                        ascii++;
+                        j.onclick =function(){console.log("This the the "+ letter +" button")}
+                    }
+                }
+
+                function get_input() {
+                    user_input = prompt("Please input a number", 5);
+                    return user_input;
+                }
+
+                function my_recipe(title, servings, ingredients) {
+                this.title = title,
+                this.servings = servings,
+                this.ingredients = ingredients,
+                this.print = function() {
+                    document.write("Title " + title + " ");
+                    document.write("Serves " + servings + " ");
+                    document.write("Ingredients: ");
+                    for (let i = 0; i < ingredients.length; i++) {
+                        document.write(ingredients[i] + ", ");
+                    }
+                }
+                    
+            }
+
+            let myObj = new my_recipe("ravioli", 4, ["pasta", "sauce"])
+            myObj.print()
+                
+
+            buttons(get_input());
+        
+
+        </script>
+        
+    </body>
+
+</html>
